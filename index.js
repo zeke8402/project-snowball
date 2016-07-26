@@ -1,7 +1,13 @@
+require('dotenv').config();
+
 var express = require('express');
 var Sequelize = require('sequelize');
 var app = express();
-var sequelize = new Sequelize('vagrant', 'vagrant', 'vagrant', {
+var sequelize = new Sequelize(
+    process.env.DB_HOST,
+    process.env.DB_USER,
+    process.env.DB_PASSWORD, {
+
   host: 'localhost',
   dialect: 'postgres',
 
