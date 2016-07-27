@@ -55,6 +55,9 @@ sequelize
 // =============================================================================
 var routes = require('./routes');
 app.use('/', routes);
+app.get('*', function(req, res) {
+  res.sendFile(__dirname + '/public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+});
 app.listen(3000);
 console.log("here we are on port 3000");
 
