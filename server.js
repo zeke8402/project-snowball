@@ -1,11 +1,12 @@
-require('dotenv').config();
+//require('dotenv').config();
 
 var express = require('express');
-var Sequelize = require('sequelize');
-var morgan = require('morgan');
-var bodyParser = require('body-parser');
-var methodOverride = require('method-override');
+//var Sequelize = require('sequelize');
+//var morgan = require('morgan');
+//var bodyParser = require('body-parser');
+//var methodOverride = require('method-override');
 var app = express();
+/*
 var sequelize = new Sequelize(
   process.env.DB_HOST,
   process.env.DB_USER,
@@ -32,14 +33,14 @@ User.sync().then(function() {
         email: 'test',
     });
 });
+*/
 
-app.use(express.static(__dirname + '/public'));                 // set the static files location /public/img will be /img for users
-app.use(morgan('dev'));                                         // log every request to the console
-app.use(bodyParser.urlencoded({'extended':'true'}));            // parse application/x-www-form-urlencoded
-app.use(bodyParser.json());                                     // parse application/json
-app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
-app.use(methodOverride());
+//app.use(express.static(__dirname + '/public'));                 // set the static files location /public/img will be /img for users
+//app.use(morgan('dev'));                                         // log every request to the console
+//app.use(bodyParser.urlencoded({'extended':'true'}));            // parse application/x-www-form-urlencoded
+//app.use(bodyParser.json());                                     // parse application/json
 
+/*
 sequelize
 .authenticate()
 .then(function(err) {
@@ -48,11 +49,13 @@ sequelize
 .catch(function (err) {
   console.log('Unable to connect to the database:', err);
 });
+*/
 
-app.get('/', function (req, res) {
-  res.send('Hello World!');
-});
+// ROUTES FOR OUR API
+// =============================================================================
+var routes = require('./routes');
+app.use('/', routes);
+app.listen(3000);
+console.log("here we are on port 3000");
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
-});
+module.exports = app;
