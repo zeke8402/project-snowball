@@ -21,11 +21,11 @@ app.use(morgan('dev'));
 var api = require('./lib/api');
 app.use('/api', api);
 
+// Route Manager right here
 var routes = require('./routes/index');
 app.use('/', routes);
 
-// Routing manager
 app.listen(3000);
-console.log("here we are on port 3000");
+console.log("Application initialized on Port 3000");
 
 module.exports = app;

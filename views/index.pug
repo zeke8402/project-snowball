@@ -1,9 +1,14 @@
 extends layouts/main.pug
 
 block content
-  div.container
-    h1 Project Snowball Steam
-    h2
-      a(href="/steam/login"): img(src="/assets/img/sits_01.png")
+  body.gradient
+    div(class="container text-center centered")
+      h1 Project Snowball Steam
+      br
+      br
+      br
+      h4.vcenter Beat your Steam library faster than ever so you can justify the endless cycle of purchases during Valve's Crippling Sales!
 
-    h3= test
+      p Login to get started
+      h2.text-center
+        a(href="/steam/login"): img(src="/assets/img/sits_01.png")

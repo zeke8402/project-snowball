@@ -7,7 +7,6 @@ router.use('/steam', require('./steam'));
 
 
 router.get('/', function(req, res) {
-  req.app.locals.test = 'local variable test';
   res.render('index');
 });
 
