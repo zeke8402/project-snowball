@@ -18,6 +18,7 @@
     "morgan": "^1.7.0",
     "mongoose": "*",
     "passport": "*",
-    "passport-steam": "*"
+    "passport-steam": "*",
+    "sequelize": "*"
   }
 }
